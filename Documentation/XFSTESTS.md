@@ -7,7 +7,7 @@ against gocryptfs.
 
 ### generic/035
 
-Known [issue](https://github.com/hanwen/go-fuse/issues/55) in the
+Known [issue](https://github.com/adrianjagielak/go-fuse/issues/55) in the
 go-fuse library. Unlikely to have real-world impact.
 
 ### generic/062

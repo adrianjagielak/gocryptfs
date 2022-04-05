@@ -79,7 +79,7 @@ if [[ $OPT_ENCFS -eq 1 ]]; then
 	encfs --extpass="echo test" --standard "$CRYPT" "$MNT" > /dev/null
 elif [[ $OPT_LOOPBACK -eq 1 ]]; then
 	echo "Testing go-fuse loopback"
-	"$HOME/go/src/github.com/hanwen/go-fuse/example/loopback/loopback" "$MNT" "$CRYPT" &
+	"$HOME/go/src/github.com/adrianjagielak/go-fuse/example/loopback/loopback" "$MNT" "$CRYPT" &
 	sleep 0.5
 else
 	echo -n "Testing gocryptfs $OPT_XCHACHA $OPT_OPENSSL at $CRYPT: "

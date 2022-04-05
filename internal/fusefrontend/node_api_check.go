@@ -1,7 +1,7 @@
 package fusefrontend
 
 import (
-	"github.com/hanwen/go-fuse/v2/fs"
+	"github.com/adrianjagielak/go-fuse/v2/fs"
 )
 
 // Check that we have implemented the fs.Node* interfaces

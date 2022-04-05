@@ -48,7 +48,7 @@ done
 # FS-specific compile and mount
 if [[ $MYNAME = fsstress-loopback.bash ]]; then
 	echo -n "Recompile go-fuse loopback: "
-	cd "$GOPATH/src/github.com/hanwen/go-fuse/example/loopback"
+	cd "$GOPATH/src/github.com/adrianjagielak/go-fuse/example/loopback"
 	git describe
 	go build && go install
 	OPTS="-q"
