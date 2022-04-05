@@ -12,7 +12,7 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/hanwen/go-fuse/v2/fuse"
+	"github.com/adrianjagielak/go-fuse/v2/fuse"
 
 	"github.com/rfjakob/gocryptfs/v2/internal/exitcodes"
 	"github.com/rfjakob/gocryptfs/v2/internal/fusefrontend"

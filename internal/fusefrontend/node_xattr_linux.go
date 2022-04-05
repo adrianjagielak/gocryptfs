@@ -6,8 +6,8 @@ import (
 
 	"golang.org/x/sys/unix"
 
-	"github.com/hanwen/go-fuse/v2/fs"
-	"github.com/hanwen/go-fuse/v2/fuse"
+	"github.com/adrianjagielak/go-fuse/v2/fs"
+	"github.com/adrianjagielak/go-fuse/v2/fuse"
 
 	"github.com/rfjakob/gocryptfs/v2/internal/syscallcompat"
 )

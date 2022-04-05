@@ -10,7 +10,7 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/hanwen/go-fuse/v2/fuse"
+	"github.com/adrianjagielak/go-fuse/v2/fuse"
 
 	"github.com/rfjakob/gocryptfs/v2/internal/cryptocore"
 	"github.com/rfjakob/gocryptfs/v2/internal/tlog"

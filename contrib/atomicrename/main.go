@@ -30,7 +30,7 @@ Progress and errors are reported as they occour in addition to a summary
 printed at the end. cifs and fuse filesystems are known to fail, local
 filesystems and nfs seem ok.
 
-See https://github.com/hanwen/go-fuse/issues/398 for background info.
+See https://github.com/adrianjagielak/go-fuse/issues/398 for background info.
 `, fileCount)
 	os.Exit(1)
 }

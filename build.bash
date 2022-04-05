@@ -36,12 +36,12 @@ else
 fi
 
 # go-fuse version, if available
-if [[ -d vendor/github.com/hanwen/go-fuse ]] ; then
+if [[ -d vendor/github.com/adrianjagielak/go-fuse ]] ; then
 	GITVERSIONFUSE="[vendored]"
 else
 	# go-fuse version according to Go Modules
 	FAIL=0
-	OUT=$(go list -m github.com/hanwen/go-fuse/v2 | cut -d' ' -f2-) || FAIL=1
+	OUT=$(go list -m github.com/adrianjagielak/go-fuse/v2 | cut -d' ' -f2-) || FAIL=1
 	if [[ $FAIL -eq 0 ]]; then
 		GITVERSIONFUSE=$OUT
 	else

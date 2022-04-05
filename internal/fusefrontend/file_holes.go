@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"syscall"
 
-	"github.com/hanwen/go-fuse/v2/fs"
+	"github.com/adrianjagielak/go-fuse/v2/fs"
 
 	"github.com/rfjakob/gocryptfs/v2/internal/tlog"
 )

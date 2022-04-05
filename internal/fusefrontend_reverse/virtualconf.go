@@ -5,8 +5,8 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/hanwen/go-fuse/v2/fs"
-	"github.com/hanwen/go-fuse/v2/fuse"
+	"github.com/adrianjagielak/go-fuse/v2/fs"
+	"github.com/adrianjagielak/go-fuse/v2/fuse"
 )
 
 var _ = (fs.NodeOpener)((*VirtualConfNode)(nil))

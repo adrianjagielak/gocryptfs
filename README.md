@@ -11,7 +11,7 @@ Official website: https://nuetzlich.net/gocryptfs ([markdown source](https://git
 ![Folders side-by-side animation](Documentation/folders-side-by-side.gif)
 
 gocryptfs is built on top the excellent
-[go-fuse](https://github.com/hanwen/go-fuse) FUSE library.
+[go-fuse](https://github.com/adrianjagielak/go-fuse) FUSE library.
 This project was inspired by EncFS and strives to fix its security
 issues while providing good performance
 ([benchmarks](https://nuetzlich.net/gocryptfs/comparison/#performance)).
@@ -224,7 +224,7 @@ Changelog
   for better performance on AES-GCM-256-OpenSSL and XChaCha20-Poly1305-OpenSSL
 * `-serialize_reads`: get rid of delay logic by taking advantage of the kernel flag
   `FUSE_CAP_ASYNC_READ`
-  ([go-fuse commit](https://github.com/hanwen/go-fuse/commit/15a8bb029a4e1a51e10043c370970596b1fbb737),
+  ([go-fuse commit](https://github.com/adrianjagielak/go-fuse/commit/15a8bb029a4e1a51e10043c370970596b1fbb737),
   [gocryptfs commit](https://github.com/rfjakob/gocryptfs/commit/a99051b32452c9a781efe248c0014b65d4abddf7))
 * Make obsolete `-devrandom` flag a no-op ([commit](https://github.com/rfjakob/gocryptfs/commit/61ef6b00a675456ee05d40f1ce44d693bc4be350))
 * Make `-forcedecode` flag a no-op ([commit](https://github.com/rfjakob/gocryptfs/commit/d023cd6c95fcbc6b5056ba1f425d2ac3df4abc5a))
@@ -277,8 +277,8 @@ Changelog
 * Include `gocryptfs-xray` in binary releases ([#496](https://github.com/rfjakob/gocryptfs/issues/496))
 * go-fuse: track *most recent* parent. This improves robustness when the filesystem is modified behind
   the back of gocryptfs. Helps both with `-sharedstorage` and also without.
-  ([commit 1](https://github.com/hanwen/go-fuse/commit/c3186132bf8b7a04b5e5bc27489d88181f92e4e0),
-  [commit 2](https://github.com/hanwen/go-fuse/commit/a90e1f463c3f172a7690a6449fe5955a180dfec3),
+  ([commit 1](https://github.com/adrianjagielak/go-fuse/commit/c3186132bf8b7a04b5e5bc27489d88181f92e4e0),
+  [commit 2](https://github.com/adrianjagielak/go-fuse/commit/a90e1f463c3f172a7690a6449fe5955a180dfec3),
   [#549](https://github.com/rfjakob/gocryptfs/issues/549))
 * Add directory fd caching for 2x - 3x speed boost in small file ops compared to v2.0-beta2
   ([performance numbers](https://github.com/rfjakob/gocryptfs/blob/5cb1e55714aa92a848c0fb5fc3fa7b91625210fe/Documentation/performance.txt#L73))
@@ -288,7 +288,7 @@ Changelog
 * Fix [GETATTR panic](https://github.com/rfjakob/gocryptfs/issues/519#issuecomment-718790790) in reverse mode
 
 #### v2.0-beta1, 2020-10-15
-* **Switch to the improved go-fuse [v2 API](https://pkg.go.dev/github.com/hanwen/go-fuse/v2@v2.0.3/fs)**
+* **Switch to the improved go-fuse [v2 API](https://pkg.go.dev/github.com/adrianjagielak/go-fuse/v2@v2.0.3/fs)**
   * This is a big change, a lot of code has been reorganized or rewritten
     to fit the v2 API model.
   * Please test & report bugs
@@ -303,7 +303,7 @@ Changelog
 * Make `-masterkey=stdin` work together with `-passwd`
   ([#461](https://github.com/rfjakob/gocryptfs/issues/461))
 * Fix `Unknown opcode 2016` crash on Google Cloud
-  ([go-fuse #276](https://github.com/hanwen/go-fuse/issues/276),
+  ([go-fuse #276](https://github.com/adrianjagielak/go-fuse/issues/276),
   [gocryptfs commit ec74d1d](https://github.com/rfjakob/gocryptfs/commit/ec74d1d2f4217a9a337d1db9902f32ae2aecaf33))
 
 #### v1.8.0, 2020-05-09
@@ -433,7 +433,7 @@ Changelog
   ([#201](https://github.com/rfjakob/gocryptfs/issues/201))
 * MacOS: fix `osxfuse: vnode changed generation` / `Error code -36` issue in go-fuse
   ([#213](https://github.com/rfjakob/gocryptfs/issues/213),
-  [commit](https://github.com/hanwen/go-fuse/commit/a9ddcb8a4b609500fc59c89ccc9ee05f00a5fefd))
+  [commit](https://github.com/adrianjagielak/go-fuse/commit/a9ddcb8a4b609500fc59c89ccc9ee05f00a5fefd))
 * Fix various test issues on MacOS
 
 #### v1.4.3, 2018-01-21
@@ -566,7 +566,7 @@ Changelog
 * Include rendered man page `gocryptfs.1` in the release tarball
 
 #### v1.1.1, 2016-10-30
-* Fix a panic on setting file timestamps ([go-fuse#131](https://github.com/hanwen/go-fuse/pull/131))
+* Fix a panic on setting file timestamps ([go-fuse#131](https://github.com/adrianjagielak/go-fuse/pull/131))
 * Work around an issue in tmpfs that caused a panic in xfstests generic/075
   ([gocryptfs#56](https://github.com/rfjakob/gocryptfs/issues/56))
 * Optimize NFS streaming writes
@@ -650,7 +650,7 @@ Changelog
   underlying filesystem, see [issue #22](https://github.com/rfjakob/gocryptfs/issues/22)
   * Enables to use gocryptfs on ZFS and ext3, albeit with reduced out-of-space safety.
 * [Fix statfs](https://github.com/rfjakob/gocryptfs/pull/27), by @lxp
-* Fix a fsstress [failure](https://github.com/hanwen/go-fuse/issues/106)
+* Fix a fsstress [failure](https://github.com/adrianjagielak/go-fuse/issues/106)
   in the go-fuse library.
 
 #### v0.9, 2016-04-10
@@ -676,7 +676,7 @@ Changelog
 * **Fix performance issue in small file creation**
   * This brings performance on-par with EncFS paranoia mode, with streaming writes
     significantly faster
-  * The actual [fix](https://github.com/hanwen/go-fuse/commit/c4b6b7949716d13eec856baffc7b7941ae21778c)
+  * The actual [fix](https://github.com/adrianjagielak/go-fuse/commit/c4b6b7949716d13eec856baffc7b7941ae21778c)
     is in the go-fuse library. There are no code changes in gocryptfs.
 
 #### v0.7.1, 2016-01-09
